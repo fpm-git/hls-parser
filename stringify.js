@@ -213,11 +213,11 @@ function buildSegment(lines, segment, version = 1) {
   if (segment.discontinuity) {
     lines.push(`#EXT-X-DISCONTINUITY`);
   }
-  if (segment.key) {
-    buildKey(lines, segment.key);
-  }
   if (segment.map) {
     buildMap(lines, segment.map);
+  }
+  if (segment.key) {
+    buildKey(lines, segment.key);
   }
   if (segment.programDateTime) {
     lines.push(`#EXT-X-PROGRAM-DATE-TIME:${utils.formatDate(segment.programDateTime)}`);
